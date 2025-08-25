@@ -4,5 +4,5 @@
 @@|bt.tapochek.net^$important
 @@||ozone.ru^$important
 @@||playrix.com^$important
-@@|cdn.ghostery.com^$important
+@@||ghostery.com^$important
 @@||joyreactor.cc^$important
