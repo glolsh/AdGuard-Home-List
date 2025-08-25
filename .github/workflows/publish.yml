@@ -48,11 +48,13 @@ jobs:
         --concatExternal ./blocklist/concat \
         --output ./public
 
-    - name: Deploy
-      uses: JamesIves/github-pages-deploy-action@v4
+    - name: Create or Update Release and Upload Files
+      uses: ncipollo/release-action@v1
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        folder: public
-        clean: true
-        single-commit: true
-        force: true
+        artifacts: "public/AdGuard-Home-List.Allow.txt,public/AdGuard-Home-List.Block.txt,public/badge-allow.json,public/badge-block.json"
+        tag: "latest"
+        name: "Latest Build"
+        body: "Latest release from ${{ github.event_name }}"
+        allowUpdates: true
+        removeArtifacts: true
+        replacesArtifacts: true
